@@ -1,0 +1,29 @@
+<form class="list-add" [formGroup]="addFoodGroup">
+    <div>
+      <br>
+        <label>Name</label>
+        <br>
+        <input type="text" name="name" formControlName="nameControl">
+        <label *ngIf="addFoodGroup.get('nameControl').invalid" style="color:red;">   *Please fill name</label>
+      </div>
+      <br>
+      <div>
+          <label>Description</label>
+          <br>
+          <input type="text" name="description" formControlName="descriptionControl">
+        </div>
+        <br>
+        <div>
+            <label>ImageUrl</label>
+            <br>
+            <input type="text" name="imageurl" formControlName="imageurlControl">
+          </div>
+          <br>
+          <input class="hover" type="submit" value="Submit" (click)="addFood(addFoodGroup)" [disabled]="addFoodGroup.invalid" >
+<br>
+          <div>
+            <!-- {{addFoodGroup.value | json}} -->
+            {{addFoodGroup.status | json}}
+
+          </div>
+</form>

@@ -1,0 +1,22 @@
+<div class="list-add" >
+
+  <button routerLink="/add" class="adddata hover" (click)="showAdd = true">Add</button>
+  <div *ngFor="let food of foodlist; index as i">
+      <div class="polaroid"  >
+          <img [src]="food.imageUrl" alt="" > 
+          <div class="container">
+              <h2>{{food.name}}</h2>
+              <p>{{food.description}}</p>
+              <button class="deleteData hover"  (click) = "deleteFood(i)">Delete</button>
+          </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+ 
+   
